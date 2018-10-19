@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css" type="text/css">
+
+    <title>Vue Digital Clock</title>
+  </head>
+  <body class="container text-center pt-5 bg-dark">
+    <h1 class="text-black">Vue Digital Clock</h1>
+
+    <div id="app" class="pt-5" v-cloak>
+
+        <h2 class="text-black" id="clock">{{ clockstuff }}</h2>
+
+            <form>
+              <div class="form-group mt-3 mb-2">
+                <label for="alarm" class="text-black">Set Alarm</label>
+                <input v-model="alarmTime" type="time" id="alarm">
+                <br>
+                <button v-on:click="setAlarm" class="btn btn-lg btn-primary mt-3" type="button" value="input button">Set Alarm</button>
+              </div>
+            </form>
+          <div v-if="alarm" class="text-black message"> Your alarm is set for {{ alarm }} </div>
+          <div v-else class="text-black message"> No alarm set </div>
+        </div>
+
+
+    <div id="countdown" class="mt-5" v-cloak>
+            <input class="mb-2 mt-3" v-model="timer" placeholder="set timer here">
+            <br>
+            <button v-on:click="setTimer" class="btn btn-lg btn-primary mt-3" type="button" value="input button">Set Timer</button>
+            <div class="message" v-if="timerCount"> Timer is set for {{ timerCount }}</div>
+            <div class="message" v-else> No timer set </div>
+          </div>
+      </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
